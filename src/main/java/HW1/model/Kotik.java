@@ -1,4 +1,4 @@
-package model;
+package HW1.model;
 
 public class Kotik {
     private int prettiness;
@@ -22,7 +22,7 @@ public class Kotik {
         objectCounter++;
     }
 
-    public void SetKotik (int prettiness, String name, int weight, String meow) {
+    public void setKotik (int prettiness, String name, int weight, String meow) {
         this.prettiness = prettiness;
         this.name = name;
         this.weight = weight;
@@ -73,94 +73,88 @@ public class Kotik {
         return Kotik.objectCounter;
     }
 
-    private boolean CatPlays() {
-        if (this.satiety != 0) {
+    private boolean catPlays() {
+        if (this.satiety > 0) {
             this.meow = "I like to play!";
             System.out.println(meow + "Cat is playing");
             return true;
         } else {
             this.meow = "I want to eat!!!";
-            System.out.println(meow);
             return false;
         }
     }
 
-    private boolean CatSleeps() {
-        if (this.satiety != 0) {
+    private boolean catSleeps() {
+        if (this.satiety > 0) {
             this.meow = "I like to sleep!";
             System.out.println(meow + "Cat is sleeping!");
             return true;
         } else {
             this.meow = "I want to eat!!!";
-            System.out.println(meow);
             return false;
         }
     }
-    private boolean CatEats(int satiety) {
+    private boolean eat(int satiety) {
         this.satiety += satiety;
         System.out.println("Nyam-Nyam!" + this.satiety);
         return true;
     }
-    private boolean CatEats(int satiety, int food) {
-        this.satiety = this.satiety + satiety*food;
+    private boolean eat(int satiety, String food) {
+        this.satiety = this.satiety + satiety*satiety;
         System.out.println("Nyam-Nyam!" + this.satiety);
         return true;
     }
-    private boolean CatEats() {
-        return CatEats(1, 1);
+    private boolean eat() {
+        return eat(1, "Food");
     }
-    private boolean CatCatchesMice() {
-        if (this.satiety != 0) {
+    private boolean catCatchesMice() {
+        if (this.satiety > 0) {
             this.meow = "I'm the greatest hunter!";
             System.out.println(meow + "Rrrrrrrrr!Gotcha!");
             return true;
         } else {
             this.meow = "I want to eat!!!";
-            System.out.println(meow);
             return false;
         }
     }
 
-    private boolean CatPurrs() {
-        if (this.satiety != 0) {
+    private boolean catPurrs() {
+        if (this.satiety > 0) {
             this.meow = "Murrr-Murrr";
             System.out.println(meow + "Murrr-Murrr");
             return true;
         } else {
             this.meow = "I want to eat!!!";
-            System.out.println(meow);
             return false;
         }
     }
 
     public void liveAnotherDay() {
         for (int i = 0; i < 24; i++) {
- //           System.out.println(i);
             int func = ((int) (Math.random() * 5) )+ 1;
- //           System.out.println(func);
             switch (func) {
                 case 1: {
-                    if (this.CatPlays() != true)
-                        this.CatEats(2);
+                    if (this.catPlays() != true)
+                        this.eat(2);
                 }
                 break;
                 case 2: {
-                    if (this.CatSleeps() != true)
-                        this.CatEats(2);
+                    if (this.catSleeps() != true)
+                        this.eat(2);
                 }
                 break;
                 case 3: {
-                    this.CatEats(2);
+                    this.eat(2);
                 }
                 break;
                 case 4: {
-                    if (this.CatCatchesMice() != true)
-                        this.CatEats(2);
+                    if (this.catCatchesMice() != true)
+                        this.eat(2);
                 }
                 break;
                 case 5: {
-                    if (this.CatPurrs() != true)
-                        this.CatEats(2);
+                    if (this.catPurrs() != true)
+                        this.eat(2);
                 }
                 break;
             }
