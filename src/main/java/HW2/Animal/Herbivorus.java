@@ -4,8 +4,8 @@ package HW2.Animal;
 import HW2.Food.Food;
 import HW2.Food.Grass;
 
-public abstract class Herbivourus extends Animal{
-    public Herbivourus(String name) {
+public abstract class Herbivorus extends Animal{
+    public Herbivorus(String name) {
         super(name);
     }
 
