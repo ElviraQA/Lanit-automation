@@ -1,8 +1,8 @@
 package HW2.Animal;
 
 public class Sheep extends Herbivorus implements Run, Voice {
-    public Sheep(String animalName) {
-        super(animalName);
+    public Sheep(String name) {
+        super(name);
     }
 
     @Override

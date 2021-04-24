@@ -1,8 +1,8 @@
 package HW2.Animal;
 
 public class Duck extends Herbivorus implements Swim, Run, Voice {
-    public Duck(String animalName) {
-        super(animalName);
+    public Duck(String name) {
+        super(name);
     }
 
     @Override

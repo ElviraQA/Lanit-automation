@@ -1,8 +1,8 @@
 package HW2.Animal;
 
 public class Fish extends Herbivorus implements Swim {
-    public Fish(String animalName) {
-        super(animalName);
+    public Fish(String name) {
+        super(name);
     }
 
     @Override
