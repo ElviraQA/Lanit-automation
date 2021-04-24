@@ -1,3 +1,5 @@
+package main.java.HW3;
+
 import animals.Animal;
 import animals.Voice;
 import food.Food;

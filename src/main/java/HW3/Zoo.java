@@ -1,3 +1,5 @@
+package main.java.HW3;
+
 import animals.*;
 import aviary.Aviary;
 import aviary.AviarySize;
