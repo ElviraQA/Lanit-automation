@@ -12,15 +12,5 @@ public abstract class Animal{
     }
 
 
-    public void eat(Food food) {
-        if(checkFoodType(food)){
-            int feedRate = food.getFeedRate();
-            satiety += feedRate;
-            System.out.printf("%s покормили %s и оно востановило %d голода\n", name, food.getName(), feedRate);
-        } else {
-            System.out.printf("%s не может есть %s\n", name, food.getName());
-        }
-    }
-
-    abstract boolean checkFoodType(Food food);
+    public abstract void eat(Food food);
 }
