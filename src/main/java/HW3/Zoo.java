@@ -16,10 +16,8 @@ public class Zoo {
         Lion lion2 = new Lion("Львица обычная", AviarySize.BIG);
         Crocodile crocodile = new Crocodile("Крокодил обыкновенный", AviarySize.LARGE);
 
-        //Создаем вольер для травоядных
         Aviary<Herbivores> grassEatingAviary = new Aviary<>(AviarySize.SMALL);
 
-        //Для хищников
         Aviary<Carnivores> meatEatingAviary = new Aviary<>(AviarySize.BIG);
 
         Meat meat = new Meat(10, "Мясо");
@@ -54,16 +52,13 @@ public class Zoo {
         grassEatingAviary.removeAnimal(sheep);
 
         try {
-            //пытаемся добавить существующее
             grassEatingAviary.addAnimal(duck);
 
-            //Пытаемся удалить не существующее
             grassEatingAviary.removeAnimal("Dummy");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
-        //Получаем имя животного
         System.out.println(grassEatingAviary.getAnimal("Овца обыкновенная").getName());
 
     }
